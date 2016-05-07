@@ -4,6 +4,7 @@ count=0
 url='https://www.bing.com/search?q='
 for i in `cat profiles$1`; do
     profile="-P $i"
+    sleep 20
     firefox $profile https://www.bing.com/search?q=mahendra+yadav+userimack &
     sleep 5
 
@@ -22,7 +23,7 @@ for i in `cat profiles$1`; do
         
 
     done < query
-    sleep 20
+    sleep 25
     wmctrl -ic "$(wmctrl -lp | grep "$(pgrep firefox)" | tail -1 | awk '{ print $1 }')"    
     ((count++ ))
 done
