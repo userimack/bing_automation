@@ -22,7 +22,7 @@ for i in `cat profiles$1`; do
         sleep 2
         
 
-    done < query
+    done < query1
     sleep 20
     wmctrl -ic "$(wmctrl -lp | grep "$(pgrep firefox)" | tail -1 | awk '{ print $1 }')"    
     ((count++ ))
